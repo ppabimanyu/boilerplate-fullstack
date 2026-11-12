@@ -47,7 +47,9 @@ docs/architecture.md       Arsitektur lengkap
 - Go 1.27.4
 - Node.js 22 atau lebih baru
 - Docker dan Docker Compose
-- sqlc, swag, dan golangci-lint untuk generate dan lint lokal
+- air, sqlc, swag, dan golangci-lint untuk development lokal
+
+Pasang `air` dengan `go install github.com/air-verse/air@latest`. Pasang sqlc, swag, dan golangci-lint sesuai dokumentasi masing-masing.
 
 Goose tidak perlu dipasang lokal jika memakai Docker Compose. Perintah `make migrate-up` menjalankan goose di dalam image backend.
 
