@@ -20,10 +20,10 @@ dev:
 	docker compose -f deploy/docker-compose.yml up -d --build
 
 down:
-	docker compose -f deploy/docker-compose.yml down
+	docker compose -f deploy/docker-compose.yml --profile observability down
 
 logs:
-	docker compose -f deploy/docker-compose.yml logs -f
+	docker compose -f deploy/docker-compose.yml --profile observability logs -f
 
 observability:
 	OTEL_EXPORTER_OTLP_ENDPOINT=http://otel-collector:4318 docker compose -f deploy/docker-compose.yml --profile observability up -d --build
