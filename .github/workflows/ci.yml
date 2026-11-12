@@ -43,7 +43,7 @@ jobs:
         run: golangci-lint run
 
       - name: Install govulncheck
-        run: go install golang.org/x/vuln/cmd/govulncheck@latest
+        run: go install golang.org/x/vuln/cmd/govulncheck@v1.9.0
 
       - name: Vulnerability scan
         run: govulncheck ./...
