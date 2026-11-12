@@ -185,6 +185,14 @@ Rate limit memakai Redis dan fail-open. Jika Redis tidak tersedia, request tetap
 
 Backend dan frontend punya image sendiri. Backend memakai binary statis di distroless. Frontend memakai nginx dengan SPA fallback dan proxy `/api` ke backend. Untuk production, jalankan migrasi sebelum backend baru menerima traffic, dan letakkan reverse proxy TLS di depan kedua service. `deploy/nginx.conf` adalah contoh reverse proxy same-origin.
 
+## Memakai untuk project baru
+
+1. Ganti module di `backend/go.mod` dan import path `github.com/ppabimanyu/boilerplate-fullstack`.
+2. Salin `.env.example` menjadi `.env` dan isi koneksi.
+3. Jalankan `make dev`.
+4. Tambah fitur dengan alur di atas.
+5. Ganti nama, logo, dan theme di frontend.
+
 ## Dokumentasi
 
 Arsitektur lengkap ada di [docs/architecture.md](docs/architecture.md).
