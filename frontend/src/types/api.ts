@@ -30,7 +30,7 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "application/json": components["schemas"]["HealthResponse"];
+                        "application/json": components["schemas"]["httphandler.HealthResponse"];
                     };
                 };
             };
@@ -69,7 +69,7 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "application/json": components["schemas"]["HealthResponse"];
+                        "application/json": components["schemas"]["httphandler.HealthResponse"];
                     };
                 };
                 /** @description Service Unavailable */
@@ -78,7 +78,7 @@ export interface paths {
                         [name: string]: unknown;
                     };
                     content: {
-                        "application/json": components["schemas"]["HealthResponse"];
+                        "application/json": components["schemas"]["httphandler.HealthResponse"];
                     };
                 };
             };
@@ -95,7 +95,7 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        HealthResponse: {
+        "httphandler.HealthResponse": {
             checks?: {
                 [key: string]: string;
             };

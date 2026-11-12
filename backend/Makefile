@@ -21,7 +21,7 @@ sqlc:
 	cd db && sqlc generate
 
 openapi:
-	swag init -g cmd/api/main.go -o docs --outputTypes json --parseInternal --useStructName
+	swag init -g cmd/api/main.go -o docs --outputTypes json --parseInternal
 
 tidy:
 	go mod tidy

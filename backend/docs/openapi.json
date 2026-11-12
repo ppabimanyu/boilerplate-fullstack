@@ -20,7 +20,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/HealthResponse"
+                                    "$ref": "#/components/schemas/httphandler.HealthResponse"
                                 }
                             }
                         }
@@ -41,7 +41,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/HealthResponse"
+                                    "$ref": "#/components/schemas/httphandler.HealthResponse"
                                 }
                             }
                         }
@@ -51,7 +51,7 @@
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/HealthResponse"
+                                    "$ref": "#/components/schemas/httphandler.HealthResponse"
                                 }
                             }
                         }
@@ -67,7 +67,7 @@
     ],
     "components": {
         "schemas": {
-            "HealthResponse": {
+            "httphandler.HealthResponse": {
                 "type": "object",
                 "properties": {
                     "checks": {

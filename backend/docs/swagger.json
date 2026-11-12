@@ -26,7 +26,7 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HealthResponse"
+                            "$ref": "#/definitions/httphandler.HealthResponse"
                         }
                     }
                 }
@@ -46,13 +46,13 @@
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/HealthResponse"
+                            "$ref": "#/definitions/httphandler.HealthResponse"
                         }
                     },
                     "503": {
                         "description": "Service Unavailable",
                         "schema": {
-                            "$ref": "#/definitions/HealthResponse"
+                            "$ref": "#/definitions/httphandler.HealthResponse"
                         }
                     }
                 }
@@ -60,7 +60,7 @@
         }
     },
     "definitions": {
-        "HealthResponse": {
+        "httphandler.HealthResponse": {
             "type": "object",
             "properties": {
                 "checks": {
