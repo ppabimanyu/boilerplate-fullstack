@@ -3,12 +3,14 @@ import { createBrowserRouter } from "react-router-dom";
 import { HomePage } from "./home-page";
 import { Layout } from "./layout";
 import { NotFoundPage } from "./not-found-page";
+import { RouteErrorPage } from "./route-error-page";
 import { RouteFallback } from "./route-fallback";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <RouteErrorPage />,
     HydrateFallback: RouteFallback,
     children: [
       { index: true, element: <HomePage /> },

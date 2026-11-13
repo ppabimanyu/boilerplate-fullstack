@@ -242,7 +242,7 @@ sequenceDiagram
 - **UI:** shadcn components di-commit ke repo (`components/ui`), theme provider light/dark, sonner untuk toast. Komposisi netral domain ada di `components/shared`; daftar baseline dan batasannya diatur ADR-0002.
 - **State list:** `useListQuery` memegang `limit`, `offset`, dan `q` di URL untuk semua halaman list; komponen `Pagination` dan `DataTable` tetap menerima props tanpa tahu router.
 - **Gallery:** `_gallery` hanya aktif di development dan berisi contoh setiap primitive dan shared component.
-- **Error handling:** error boundary global + mapping problem+json ke pesan UI.
+- **Error handling:** error element di route root untuk crash saat render, error boundary global untuk kegagalan di luar router, dan mapping problem+json ke pesan UI.
 - **Env:** `VITE_API_URL`; untuk deployment same-origin gunakan path relatif `/api/v1`. Di development, Vite mem-proxy `/api` ke backend.
 
 ## 11. Konvensi API
