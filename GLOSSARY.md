@@ -16,6 +16,10 @@ _Avoid_: Common component, generic component, widget
 The fixed set of primitives and shared components the template ships before any feature exists, justified by future template consumers rather than a present call site.
 _Avoid_: Starter kit, component library, design system
 
+**Preset**:
+The external shadcn theme and component style a project runs on; it owns colour, radius, and typography.
+_Avoid_: Theme, skin, design language
+
 **Block**:
 A page-level section assembled from primitives and shared components, owned by one feature until a second consumer needs it.
 _Avoid_: Section, module, widget, template

@@ -97,8 +97,8 @@ export function HouseStyleSection() {
           <BrandMark className="size-5 text-brand" />
         </div>
         <p className="max-w-[60ch] text-sm text-muted-foreground">
-          Lucide at a 1.75 stroke everywhere. Brand tint marks a layer or a status; it never colours
-          an ordinary control.
+          Lucide at the preset's stroke. The house layer tints with `--brand`, which maps to
+          `--primary`, so a preset swap carries the graphics along.
         </p>
       </GalleryDemo>
     </GallerySection>
