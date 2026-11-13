@@ -1,0 +1,93 @@
+- RootWebArea "Boilerplate"
+  - banner
+    - Boilerplate
+      - InlineTextBox "Boilerplate"
+    - navigation
+      - link "Home"
+        - Home
+          - InlineTextBox "Home"
+    - button "System theme. Switch to Light."
+  - main
+    - sectionheader
+      - heading "Component gallery" level=1
+        - Component gallery
+          - InlineTextBox "Component gallery"
+      - paragraph
+        - Dev-only examples for the shared components. This route is not part of the production build.
+          - InlineTextBox "Dev-only examples for the shared components. This route is not part of the production "
+          - InlineTextBox "build."
+    - heading "Data state" level=2
+      - Data state
+        - InlineTextBox "Data state"
+    - paragraph
+      - One component, four mutually exclusive states.
+        - InlineTextBox "One component, four mutually exclusive states."
+    - heading "Loading" level=3
+      - Loading
+        - InlineTextBox "Loading"
+    - status "Loading"
+    - Loading
+      - InlineTextBox "Loading"
+    - heading "Empty" level=3
+      - Empty
+        - InlineTextBox "Empty"
+    - No projects yet
+      - InlineTextBox "No projects yet"
+    - Create a project to see it here.
+      - InlineTextBox "Create a project to see it here."
+    - button "New project"
+      - New project
+        - InlineTextBox "New project"
+    - heading "Error" level=3
+      - Error
+        - InlineTextBox "Error"
+    - alert
+      - Something went wrong
+        - InlineTextBox "Something went wrong"
+      - The projects service did not respond.
+        - InlineTextBox "The projects service did not respond."
+      - button "Try again"
+        - Try again
+          - InlineTextBox "Try again"
+    - heading "Ready" level=3
+      - Ready
+        - InlineTextBox "Ready"
+    - paragraph
+      - 3 projects
+        - InlineTextBox "3 projects"
+    - paragraph
+      - Ready content renders as children.
+        - InlineTextBox "Ready content renders as children."
+    - heading "Form field" level=2
+      - Form field
+        - InlineTextBox "Form field"
+    - paragraph
+      - React Hook Form and Zod, with label, description, and error wiring.
+        - InlineTextBox "React Hook Form and Zod, with label, description, and error wiring."
+    - form
+      - group
+        - LabelText
+          - Name
+            - InlineTextBox "Name"
+        - textbox "Name"
+        - paragraph
+          - Shown on the submitted message.
+            - InlineTextBox "Shown on the submitted message."
+      - group
+        - LabelText
+          - Message
+            - InlineTextBox "Message"
+        - textbox "Message"
+        - paragraph
+          - At least 10 characters.
+            - InlineTextBox "At least 10 characters."
+      - button "Submit"
+        - Submit
+          - InlineTextBox "Submit"
+      - button "Reset"
+        - Reset
+          - InlineTextBox "Reset"
+  - contentinfo
+    - Built with React, Vite, and Tailwind CSS.
+      - InlineTextBox "Built with React, Vite, and Tailwind CSS."
+  - region "Notifications alt+T"

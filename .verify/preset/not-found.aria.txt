@@ -1,0 +1,26 @@
+- RootWebArea "Boilerplate"
+  - banner
+    - Boilerplate
+      - InlineTextBox "Boilerplate"
+    - navigation
+      - link "Home"
+        - Home
+          - InlineTextBox "Home"
+    - button "Light theme. Switch to Dark."
+  - main
+    - paragraph
+      - 404
+        - InlineTextBox "404"
+    - heading "Page not found" level=1
+      - Page not found
+        - InlineTextBox "Page not found"
+    - paragraph
+      - The page you are looking for does not exist.
+        - InlineTextBox "The page you are looking for does not exist."
+    - link "Go home"
+      - Go home
+        - InlineTextBox "Go home"
+  - contentinfo
+    - Built with React, Vite, and Tailwind CSS.
+      - InlineTextBox "Built with React, Vite, and Tailwind CSS."
+  - region "Notifications alt+T"

@@ -1,0 +1,58 @@
+- RootWebArea "Boilerplate"
+  - banner
+    - Boilerplate
+      - InlineTextBox "Boilerplate"
+    - navigation
+      - link "Home"
+        - Home
+          - InlineTextBox "Home"
+    - button "System theme. Switch to Light."
+  - main
+    - heading "Boilerplate" level=1
+      - Boilerplate
+        - InlineTextBox "Boilerplate"
+    - paragraph
+      - A general-purpose foundation for React applications, wired with typed API access and server state management.
+        - InlineTextBox "A general-purpose foundation for React applications, wired with typed API access and "
+        - InlineTextBox "server state management."
+    - Operational
+      - InlineTextBox "Operational"
+    - Backend readiness
+      - InlineTextBox "Backend readiness"
+    - paragraph
+      - All dependencies are responding.
+        - InlineTextBox "All dependencies are responding."
+    - button "Retry"
+      - Retry
+        - InlineTextBox "Retry"
+    - Stack
+      - InlineTextBox "Stack"
+    - list
+      - listitem level=1
+        - React 19
+          - InlineTextBox "React 19"
+      - listitem level=1
+        - Vite
+          - InlineTextBox "Vite"
+      - listitem level=1
+        - TypeScript
+          - InlineTextBox "TypeScript"
+      - listitem level=1
+        - Tailwind CSS v4
+          - InlineTextBox "Tailwind CSS v4"
+      - listitem level=1
+        - shadcn/ui
+          - InlineTextBox "shadcn/ui"
+      - listitem level=1
+        - React Router v7
+          - InlineTextBox "React Router v7"
+      - listitem level=1
+        - TanStack Query v5
+          - InlineTextBox "TanStack Query v5"
+      - listitem level=1
+        - openapi-fetch
+          - InlineTextBox "openapi-fetch"
+  - contentinfo
+    - Built with React, Vite, and Tailwind CSS.
+      - InlineTextBox "Built with React, Vite, and Tailwind CSS."
+  - region "Notifications alt+T"
