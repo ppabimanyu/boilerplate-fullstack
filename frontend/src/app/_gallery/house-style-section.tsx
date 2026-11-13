@@ -1,6 +1,7 @@
 import { Activity, Database, Monitor, Server } from "lucide-react";
 
 import { BrandLockup, BrandMark } from "@/brand/brand-mark";
+import { ServiceChart } from "@/brand/service-chart";
 import { cn } from "@/lib/utils";
 import { GalleryDemo, GallerySection } from "./section";
 
@@ -39,6 +40,21 @@ export function HouseStyleSection() {
           ))}
         </div>
         <BrandLockup />
+      </GalleryDemo>
+
+      <GalleryDemo label="Service chart">
+        <div className="flex flex-wrap items-start gap-8">
+          {["Billing", "Console", "Ledger"].map((name) => (
+            <div key={name} className="flex flex-col items-center gap-2">
+              <ServiceChart name={name} className="w-40" />
+              <span className="text-xs text-muted-foreground">{name}</span>
+            </div>
+          ))}
+        </div>
+        <p className="max-w-[60ch] text-sm text-muted-foreground">
+          One fixed chart, one lit cell per service. The cell comes from the service name, so every
+          project carries the same graphic with its own fingerprint.
+        </p>
       </GalleryDemo>
 
       <GalleryDemo label="Palette">

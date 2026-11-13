@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
 
 import { SheetCorners } from "@/brand/sheet-corners";
+import { ServiceChart } from "@/brand/service-chart";
 import { HealthStatus } from "@/components/shared/health-status";
 
 const stack = [
@@ -81,24 +82,29 @@ function Code({ children }: { children: ReactNode }) {
 export function HomePage() {
   return (
     <div className="flex flex-col gap-12">
-      <section className="relative flex flex-col gap-6 px-4 py-4">
+      <section className="relative px-4 py-4">
         <SheetCorners className="hidden sm:block" />
-        <h1 className="max-w-3xl text-balance text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.02] font-semibold tracking-[-0.03em]">
-          A Go and React foundation for the next project.
-        </h1>
-        <p className="max-w-[60ch] text-base leading-relaxed text-muted-foreground">
-          HTTP server, configuration, PostgreSQL, Redis, observability, typed API access, and a
-          component baseline. No domain and no authentication, so nothing has to be removed before
-          the first feature.
-        </p>
-        {import.meta.env.DEV ? (
-          <Link
-            to="/_gallery"
-            className="w-fit text-sm font-medium text-brand underline decoration-brand/40 underline-offset-4 transition-colors hover:decoration-brand"
-          >
-            Browse the component gallery
-          </Link>
-        ) : null}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_252px] lg:items-start">
+          <div className="flex flex-col gap-6">
+            <h1 className="max-w-3xl text-balance text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.02] font-semibold tracking-[-0.03em]">
+              A Go and React foundation for the next project.
+            </h1>
+            <p className="max-w-[60ch] text-base leading-relaxed text-muted-foreground">
+              HTTP server, configuration, PostgreSQL, Redis, observability, typed API access, and a
+              component baseline. No domain and no authentication, so nothing has to be removed
+              before the first feature.
+            </p>
+            {import.meta.env.DEV ? (
+              <Link
+                to="/_gallery"
+                className="w-fit text-sm font-medium text-brand underline decoration-brand/40 underline-offset-4 transition-colors hover:decoration-brand"
+              >
+                Browse the component gallery
+              </Link>
+            ) : null}
+          </div>
+          <ServiceChart className="w-40 lg:w-auto" />
+        </div>
       </section>
 
       <section aria-label="Readiness" className="border-y border-border py-5">
