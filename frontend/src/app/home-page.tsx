@@ -1,4 +1,5 @@
 import { HealthStatus } from "@/components/shared/health-status";
+import { PageHeader } from "@/components/shared/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const stack = [
@@ -15,13 +16,10 @@ const stack = [
 export function HomePage() {
   return (
     <div className="flex flex-col gap-6">
-      <section className="flex flex-col gap-2">
-        <h1 className="text-3xl font-bold tracking-tight">Boilerplate</h1>
-        <p className="max-w-2xl text-muted-foreground">
-          A general-purpose foundation for React applications, wired with typed API access and
-          server state management.
-        </p>
-      </section>
+      <PageHeader
+        title="Boilerplate"
+        description="A general-purpose foundation for React applications, wired with typed API access and server state management."
+      />
 
       <HealthStatus />
 
