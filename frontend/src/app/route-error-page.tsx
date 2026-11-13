@@ -1,7 +1,7 @@
 import { isRouteErrorResponse, Link, useRouteError } from "react-router-dom";
 
+import { StatusPage } from "@/components/shared/status-page";
 import { Button } from "@/components/ui/button";
-import { ErrorFallback } from "./error-fallback";
 
 function describe(error: unknown): string {
   if (isRouteErrorResponse(error)) {
@@ -20,7 +20,7 @@ export function RouteErrorPage() {
   const notFound = isRouteErrorResponse(error) && error.status === 404;
 
   return (
-    <ErrorFallback
+    <StatusPage
       title={notFound ? "Page not found" : "Something went wrong"}
       description={describe(error)}
       detail={

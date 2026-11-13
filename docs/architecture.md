@@ -243,6 +243,7 @@ sequenceDiagram
 - **State list:** `useListQuery` memegang `limit`, `offset`, dan `q` di URL untuk semua halaman list; komponen `Pagination` dan `DataTable` tetap menerima props tanpa tahu router.
 - **Gallery:** `_gallery` hanya aktif di development dan berisi contoh setiap primitive dan shared component.
 - **Error handling:** error element di route root untuk crash saat render, error boundary global untuk kegagalan di luar router, dan mapping problem+json ke pesan UI.
+- **Maintenance:** build dengan `VITE_MAINTENANCE_MODE=true` mengganti seluruh aplikasi dengan halaman maintenance, termasuk deep link. Route `/maintenance` tetap tersedia untuk redirect di reverse proxy.
 - **Env:** `VITE_API_URL`; untuk deployment same-origin gunakan path relatif `/api/v1`. Di development, Vite mem-proxy `/api` ke backend.
 
 ## 11. Konvensi API

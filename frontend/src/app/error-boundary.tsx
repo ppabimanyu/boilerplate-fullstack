@@ -1,7 +1,7 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
 
+import { StatusPage } from "@/components/shared/status-page";
 import { Button } from "@/components/ui/button";
-import { ErrorFallback } from "./error-fallback";
 
 type ErrorBoundaryProps = {
   children: ReactNode;
@@ -30,7 +30,9 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   render() {
     if (this.state.hasError) {
       return (
-        <ErrorFallback
+        <StatusPage
+          title="Something went wrong"
+          description="The page could not be rendered. Reloading usually fixes it."
           actions={<Button onClick={() => window.location.reload()}>Reload page</Button>}
         />
       );
