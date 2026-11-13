@@ -7,14 +7,17 @@
 
 :root {
   --radius: 0.5rem;
+  --brand: #0c6e80;
+  --brand-soft: #e3f1f4;
+  --brand-foreground: #fafaf7;
   --background: #fafaf7;
   --foreground: #16181d;
   --card: #ffffff;
   --card-foreground: #16181d;
   --popover: #ffffff;
   --popover-foreground: #16181d;
-  --primary: #16181d;
-  --primary-foreground: #fafaf7;
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-foreground);
   --secondary: #f1f1ec;
   --secondary-foreground: #16181d;
   --muted: #f1f1ec;
@@ -26,7 +29,7 @@
   --warning: #b54708;
   --border: #e4e4de;
   --input: #dcdcd4;
-  --ring: #16181d;
+  --ring: var(--brand);
   --chart-1: #16181d;
   --chart-2: #6a6e76;
   --chart-3: #9a9ea6;
@@ -43,14 +46,17 @@
 }
 
 .dark {
+  --brand: #7fc4d4;
+  --brand-soft: #172528;
+  --brand-foreground: #121316;
   --background: #121316;
   --foreground: #f2f2ed;
   --card: #17181c;
   --card-foreground: #f2f2ed;
   --popover: #17181c;
   --popover-foreground: #f2f2ed;
-  --primary: #f2f2ed;
-  --primary-foreground: #121316;
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-foreground);
   --secondary: #1e2026;
   --secondary-foreground: #f2f2ed;
   --muted: #1e2026;
@@ -62,7 +68,7 @@
   --warning: #fdb022;
   --border: #26282e;
   --input: #2c2f36;
-  --ring: #f2f2ed;
+  --ring: var(--brand);
   --chart-1: #f2f2ed;
   --chart-2: #9a9ea6;
   --chart-3: #6a6e76;
@@ -94,6 +100,8 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -135,5 +143,10 @@
     @apply font-sans;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  /* One stroke weight across the house icon set. */
+  svg.lucide {
+    stroke-width: 1.75;
   }
 }

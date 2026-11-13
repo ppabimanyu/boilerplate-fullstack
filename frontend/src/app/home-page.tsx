@@ -1,13 +1,31 @@
+import { Activity, Database, Monitor, Server } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
 
+import { SheetCorners } from "@/brand/sheet-corners";
 import { HealthStatus } from "@/components/shared/health-status";
 
 const stack = [
-  { layer: "Backend", items: "Go 1.27, chi, pgx, sqlc, goose" },
-  { layer: "Frontend", items: "React 19, Vite, Tailwind CSS v4, shadcn/ui" },
-  { layer: "Data", items: "PostgreSQL, Redis, TanStack Query, openapi-fetch" },
-  { layer: "Operations", items: "OpenTelemetry, Docker Compose, GitHub Actions" },
+  {
+    layer: "Backend",
+    icon: Server,
+    items: "Go 1.27, chi, pgx, sqlc, goose",
+  },
+  {
+    layer: "Frontend",
+    icon: Monitor,
+    items: "React 19, Vite, Tailwind CSS v4, shadcn/ui",
+  },
+  {
+    layer: "Data",
+    icon: Database,
+    items: "PostgreSQL, Redis, TanStack Query, openapi-fetch",
+  },
+  {
+    layer: "Operations",
+    icon: Activity,
+    items: "OpenTelemetry, Docker Compose, GitHub Actions",
+  },
 ];
 
 const absent = [
@@ -63,7 +81,8 @@ function Code({ children }: { children: ReactNode }) {
 export function HomePage() {
   return (
     <div className="flex flex-col gap-12">
-      <section className="flex flex-col gap-6">
+      <section className="relative flex flex-col gap-6 px-4 py-4">
+        <SheetCorners className="hidden sm:block" />
         <h1 className="max-w-3xl text-balance text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.02] font-semibold tracking-[-0.03em]">
           A Go and React foundation for the next project.
         </h1>
@@ -75,7 +94,7 @@ export function HomePage() {
         {import.meta.env.DEV ? (
           <Link
             to="/_gallery"
-            className="w-fit text-sm font-medium underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
+            className="w-fit text-sm font-medium text-brand underline decoration-brand/40 underline-offset-4 transition-colors hover:decoration-brand"
           >
             Browse the component gallery
           </Link>
@@ -90,9 +109,12 @@ export function HomePage() {
         <div>
           <h2 className="text-sm font-semibold">What's inside</h2>
           <dl className="mt-4 divide-y divide-border border-t border-border">
-            {stack.map(({ layer, items }) => (
-              <div key={layer} className="grid grid-cols-[88px_1fr] gap-4 py-3 text-sm">
-                <dt className="text-muted-foreground">{layer}</dt>
+            {stack.map(({ layer, icon: Icon, items }) => (
+              <div key={layer} className="grid grid-cols-[92px_1fr] gap-4 py-3 text-sm">
+                <dt className="flex items-center gap-2 text-muted-foreground">
+                  <Icon className="size-4 shrink-0 text-brand" aria-hidden="true" />
+                  {layer}
+                </dt>
                 <dd className="leading-relaxed">{items}</dd>
               </div>
             ))}
@@ -116,7 +138,7 @@ export function HomePage() {
         <ol className="mt-4 grid gap-8 border-t border-border pt-6 sm:grid-cols-3">
           {steps.map((step, index) => (
             <li key={step.title} className="flex flex-col gap-2">
-              <span className="text-sm text-muted-foreground tabular-nums">0{index + 1}</span>
+              <span className="text-sm text-brand tabular-nums">0{index + 1}</span>
               <h3 className="text-base font-medium">{step.title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{step.body}</p>
             </li>

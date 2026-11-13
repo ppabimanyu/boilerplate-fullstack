@@ -1,5 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 
+import { BrandLockup, BrandMark } from "@/brand/brand-mark";
+import { appName } from "@/brand/brand";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { cn } from "@/lib/utils";
 
@@ -12,12 +14,12 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 export function Layout() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <div className="h-[3px] bg-brand" aria-hidden="true" />
       <header className="border-b border-border">
         <div className="mx-auto flex h-14 w-full max-w-[1120px] items-center justify-between px-6">
           <div className="flex items-center gap-8">
-            <Link to="/" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
-              <span className="size-2.5 bg-foreground" aria-hidden="true" />
-              Boilerplate
+            <Link to="/" aria-label={`${appName} home`}>
+              <BrandLockup />
             </Link>
             <nav className="flex items-center gap-6">
               <NavLink to="/" end className={navLinkClass}>
@@ -37,8 +39,9 @@ export function Layout() {
         <Outlet />
       </main>
       <footer className="border-t border-border">
-        <div className="mx-auto w-full max-w-[1120px] px-6 py-8 text-sm text-muted-foreground">
-          Go, Postgres, and React, wired together.
+        <div className="mx-auto flex w-full max-w-[1120px] items-center gap-2.5 px-6 py-8 text-sm text-muted-foreground">
+          <BrandMark className="size-4" />
+          <span>Go, Postgres, and React, wired together.</span>
         </div>
       </footer>
     </div>
