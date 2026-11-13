@@ -1,7 +1,7 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
 
+import { StatusPage } from "@/components/shared/status-page";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 type ErrorBoundaryProps = {
   children: ReactNode;
@@ -11,6 +11,11 @@ type ErrorBoundaryState = {
   hasError: boolean;
 };
 
+/**
+ * Catches failures outside route rendering, such as providers or the router
+ * failing to initialise. Route render errors are handled by the router through
+ * the root route's error element.
+ */
 export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   state: ErrorBoundaryState = { hasError: false };
 
@@ -25,19 +30,11 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   render() {
     if (this.state.hasError) {
       return (
-        <div className="flex min-h-screen items-center justify-center p-4">
-          <Card className="w-full max-w-md">
-            <CardHeader>
-              <CardTitle>Something went wrong</CardTitle>
-              <CardDescription>
-                The page could not be rendered. Reloading usually fixes it.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button onClick={() => window.location.reload()}>Reload page</Button>
-            </CardContent>
-          </Card>
-        </div>
+        <StatusPage
+          title="Something went wrong"
+          description="The page could not be rendered. Reloading usually fixes it."
+          actions={<Button onClick={() => window.location.reload()}>Reload page</Button>}
+        />
       );
     }
 

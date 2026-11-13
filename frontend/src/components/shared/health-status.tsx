@@ -1,31 +1,15 @@
 import { RefreshCw } from "lucide-react";
 
+import { StatusBadge, type Status } from "@/components/shared/status-badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useHealth } from "@/hooks/use-health";
-import { cn } from "@/lib/utils";
 
 type HealthState = "checking" | "operational" | "degraded";
 
-const healthStates: Record<
-  HealthState,
-  { label: string; dotClassName: string; description: string }
-> = {
-  checking: {
-    label: "Checking",
-    dotClassName: "bg-muted-foreground",
-    description: "Contacting the backend.",
-  },
-  operational: {
-    label: "Operational",
-    dotClassName: "bg-emerald-500",
-    description: "All dependencies are responding.",
-  },
-  degraded: {
-    label: "Degraded",
-    dotClassName: "bg-red-500",
-    description: "One or more dependencies are unavailable.",
-  },
+const healthStates: Record<HealthState, { status: Status; label: string }> = {
+  checking: { status: "pending", label: "Checking" },
+  operational: { status: "success", label: "Operational" },
+  degraded: { status: "danger", label: "Degraded" },
 };
 
 export function HealthStatus() {
@@ -37,24 +21,41 @@ export function HealthStatus() {
       ? "degraded"
       : "operational";
 
-  const { label, dotClassName, description } = healthStates[state];
+  const { status, label } = healthStates[state];
+  const checks = Object.entries(data?.checks ?? {});
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-base">
-          <span className={cn("size-2.5 rounded-full", dotClassName)} aria-hidden="true" />
-          {label}
-        </CardTitle>
-        <CardDescription>Backend readiness</CardDescription>
-      </CardHeader>
-      <CardContent className="flex items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground">{description}</p>
-        <Button variant="outline" size="sm" onClick={() => void refetch()} disabled={isFetching}>
-          <RefreshCw className={isFetching ? "animate-spin" : undefined} />
-          Retry
-        </Button>
-      </CardContent>
-    </Card>
+    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <span className="text-sm font-medium">Readiness</span>
+        <StatusBadge status={status} label={label} />
+        {checks.length > 0 ? (
+          <dl className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm">
+            {checks.map(([name, value]) => (
+              <div key={name} className="flex items-center gap-1.5">
+                <dt className="first-letter:uppercase text-muted-foreground">{name}</dt>
+                <dd className={value === "ok" ? "text-foreground" : "text-destructive"}>
+                  {value === "ok" ? "responding" : "not responding"}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        ) : (
+          <span className="text-sm text-muted-foreground">
+            {isError ? "The backend did not answer. Start the stack with make dev." : null}
+          </span>
+        )}
+      </div>
+      <Button
+        variant="ghost"
+        size="sm"
+        className="-ml-2 self-start sm:ml-0 sm:self-auto"
+        onClick={() => void refetch()}
+        disabled={isFetching}
+      >
+        <RefreshCw className={isFetching ? "animate-spin" : undefined} />
+        Check again
+      </Button>
+    </div>
   );
 }

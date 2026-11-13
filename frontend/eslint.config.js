@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           allowConstantExport: true,
           allowCompoundComponents: true,
-          allowExportNames: ["useTheme", "buttonVariants"],
+          allowExportNames: ["useTheme", "buttonVariants", "badgeVariants", "tabsListVariants"],
         },
       ],
     },

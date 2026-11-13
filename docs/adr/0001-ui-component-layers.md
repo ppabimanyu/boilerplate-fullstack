@@ -1,5 +1,5 @@
 ---
-status: accepted
+status: amended by ADR-0002
 ---
 
 # UI component layers and generated code ownership

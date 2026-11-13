@@ -239,8 +239,13 @@ sequenceDiagram
 - **Server state:** TanStack Query; `QueryClientProvider` disiapkan di `app/providers`; query key terpusat per fitur.
 - **API client:** `openapi-fetch` dengan tipe hasil `openapi-typescript`; base URL dari `VITE_API_URL`.
 - **Form:** React Hook Form + Zod disiapkan untuk fitur yang membutuhkan form.
-- **UI:** shadcn components di-commit ke repo (`components/ui`), theme provider light/dark, sonner untuk toast.
-- **Error handling:** error boundary global + mapping problem+json ke pesan UI.
+- **UI:** shadcn components di-commit ke repo (`components/ui`), theme provider light/dark, sonner untuk toast. Komposisi netral domain ada di `components/shared`; daftar baseline dan batasannya diatur ADR-0002.
+- **Brand:** `frontend/src/brand` memegang nama service (`VITE_APP_NAME`), tanda registrasi, dan house test chart. Preset shadcn (`radix-luma`, id `b3lnkvlhY`) memegang warna, radius, dan tipografi. Tinta rumah `--brand` memetakan `--primary`, jadi grafis rumah selalu ikut preset tanpa menyalin nilainya. Service chart menyalakan satu sel dari 36 berdasarkan nama service, sehingga setiap project memakai grafis yang sama dengan sidik jari sendiri. Spesimen lengkap ada di section House style pada `_gallery`.
+- **OG card:** `public/og.png` (1200×630) memakai mark, crop mark, dan chart yang sama. `og:image` masih relatif; ubah menjadi URL absolut per project agar crawler sosial membacanya.
+- **State list:** `useListQuery` memegang `limit`, `offset`, dan `q` di URL untuk semua halaman list; komponen `Pagination` dan `DataTable` tetap menerima props tanpa tahu router.
+- **Gallery:** `_gallery` hanya aktif di development dan berisi contoh setiap primitive dan shared component.
+- **Error handling:** error element di route root untuk crash saat render, error boundary global untuk kegagalan di luar router, dan mapping problem+json ke pesan UI.
+- **Maintenance:** build dengan `VITE_MAINTENANCE_MODE=true` mengganti seluruh aplikasi dengan halaman maintenance, termasuk deep link. Route `/maintenance` tetap tersedia untuk redirect di reverse proxy.
 - **Env:** `VITE_API_URL`; untuk deployment same-origin gunakan path relatif `/api/v1`. Di development, Vite mem-proxy `/api` ke backend.
 
 ## 11. Konvensi API
