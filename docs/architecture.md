@@ -239,7 +239,9 @@ sequenceDiagram
 - **Server state:** TanStack Query; `QueryClientProvider` disiapkan di `app/providers`; query key terpusat per fitur.
 - **API client:** `openapi-fetch` dengan tipe hasil `openapi-typescript`; base URL dari `VITE_API_URL`.
 - **Form:** React Hook Form + Zod disiapkan untuk fitur yang membutuhkan form.
-- **UI:** shadcn components di-commit ke repo (`components/ui`), theme provider light/dark, sonner untuk toast.
+- **UI:** shadcn components di-commit ke repo (`components/ui`), theme provider light/dark, sonner untuk toast. Komposisi netral domain ada di `components/shared`; daftar baseline dan batasannya diatur ADR-0002.
+- **State list:** `useListQuery` memegang `limit`, `offset`, dan `q` di URL untuk semua halaman list; komponen `Pagination` dan `DataTable` tetap menerima props tanpa tahu router.
+- **Gallery:** `_gallery` hanya aktif di development dan berisi contoh setiap primitive dan shared component.
 - **Error handling:** error boundary global + mapping problem+json ke pesan UI.
 - **Env:** `VITE_API_URL`; untuk deployment same-origin gunakan path relatif `/api/v1`. Di development, Vite mem-proxy `/api` ke backend.
 
