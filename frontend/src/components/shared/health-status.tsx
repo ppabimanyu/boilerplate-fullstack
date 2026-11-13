@@ -1,29 +1,26 @@
 import { RefreshCw } from "lucide-react";
 
+import { StatusBadge, type Status } from "@/components/shared/status-badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useHealth } from "@/hooks/use-health";
-import { cn } from "@/lib/utils";
 
 type HealthState = "checking" | "operational" | "degraded";
 
-const healthStates: Record<
-  HealthState,
-  { label: string; dotClassName: string; description: string }
-> = {
+const healthStates: Record<HealthState, { status: Status; label: string; description: string }> = {
   checking: {
+    status: "pending",
     label: "Checking",
-    dotClassName: "bg-muted-foreground",
     description: "Contacting the backend.",
   },
   operational: {
+    status: "success",
     label: "Operational",
-    dotClassName: "bg-emerald-500",
     description: "All dependencies are responding.",
   },
   degraded: {
+    status: "danger",
     label: "Degraded",
-    dotClassName: "bg-red-500",
     description: "One or more dependencies are unavailable.",
   },
 };
@@ -37,14 +34,13 @@ export function HealthStatus() {
       ? "degraded"
       : "operational";
 
-  const { label, dotClassName, description } = healthStates[state];
+  const { status, label, description } = healthStates[state];
 
   return (
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-base">
-          <span className={cn("size-2.5 rounded-full", dotClassName)} aria-hidden="true" />
-          {label}
+          <StatusBadge status={status} label={label} />
         </CardTitle>
         <CardDescription>Backend readiness</CardDescription>
       </CardHeader>

@@ -1,3 +1,4 @@
+import { StatusBadge } from "@/components/shared/status-badge";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -34,6 +35,17 @@ export function DisplaySection() {
               {variant}
             </Badge>
           ))}
+        </div>
+      </GalleryDemo>
+
+      <GalleryDemo label="Status badge">
+        <div className="flex flex-wrap items-center gap-2">
+          <StatusBadge status="success" label="Operational" />
+          <StatusBadge status="warning" label="Degraded" />
+          <StatusBadge status="danger" label="Failed" />
+          <StatusBadge status="neutral" label="Draft" />
+          <StatusBadge status="pending" label="Checking" />
+          <StatusBadge status="neutral" label="No dot" dot={false} />
         </div>
       </GalleryDemo>
 
