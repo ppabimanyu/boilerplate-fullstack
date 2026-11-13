@@ -15,3 +15,6 @@ frontend/coverage/
 frontend/.vite/
 
 deploy/.env
+
+# Verification evidence and scratch state (see .claude/skills/verify)
+.verify/
