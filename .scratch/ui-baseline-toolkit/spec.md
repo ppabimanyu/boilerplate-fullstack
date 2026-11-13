@@ -73,7 +73,7 @@ A component is done when all four are true:
 2. **Tier A primitives**, one commit per group: overlays (`dialog`, `alert-dialog`, `tooltip`), selection (`select`, `dropdown-menu`), display (`table`, `badge`, `skeleton`, `tabs`, `avatar`). ✅ installed, gallery split into `src/app/_gallery/`, `tsc` + `eslint` + `vitest` + `vite build` pass
 3. **`status-badge` + `health-status` refactor** — proves the baseline rule with a real consumer.
 4. **`pagination` → `data-table`** — table depends on pagination. ✅ `use-list-query` owns `limit`/`offset`/`q`, gallery demo paginates a fake 134-row set
-5. **`confirm-dialog`**, then `search-input` + `use-debounce`, `submit-button`, `settings-section`, `copy-button`.
+5. **`confirm-dialog`**, then `search-input` + `use-debounce`, `submit-button`, `settings-section`, `copy-button`. ✅
 6. **`_gallery` consolidation** and a final `make lint`, `make test`, `make build`.
 
 ## Non-goals
