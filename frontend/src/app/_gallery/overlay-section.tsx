@@ -66,16 +66,18 @@ export function OverlaySection() {
       </div>
 
       <GalleryDemo label="Tooltip">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button variant="ghost" size="sm">
-                Hover or focus me
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>Never the only label for an action.</TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <div>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="ghost" size="sm">
+                  Hover or focus me
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>Never the only label for an action.</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
       </GalleryDemo>
     </GallerySection>
   );
