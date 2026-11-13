@@ -183,9 +183,7 @@ export function DataTable<T>({
               <TableRow key={rowKey(row)}>
                 {columns.map((column) => (
                   <TableCell key={column.id} className={column.className}>
-                    {column.cell
-                      ? column.cell(row)
-                      : String(column.accessor(row) ?? "")}
+                    {column.cell ? column.cell(row) : String(column.accessor(row) ?? "")}
                   </TableCell>
                 ))}
               </TableRow>

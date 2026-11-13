@@ -45,9 +45,7 @@ export function StatusBadge({ status, label, dot = true, className }: StatusBadg
 
   return (
     <Badge variant="outline" className={cn("gap-1.5", style.badge, className)}>
-      {dot ? (
-        <span className={cn("size-1.5 rounded-full", style.dot)} aria-hidden="true" />
-      ) : null}
+      {dot ? <span className={cn("size-1.5 rounded-full", style.dot)} aria-hidden="true" /> : null}
       {label}
     </Badge>
   );

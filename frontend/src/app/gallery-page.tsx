@@ -3,9 +3,12 @@ import { Separator } from "@/components/ui/separator";
 import { DataStateSection } from "./_gallery/data-state-section";
 import { DataTableSection } from "./_gallery/data-table-section";
 import { DisplaySection } from "./_gallery/display-section";
+import { FeedbackSection } from "./_gallery/feedback-section";
 import { FormFieldSection } from "./_gallery/form-field-section";
+import { FormsSection } from "./_gallery/forms-section";
 import { OverlaySection } from "./_gallery/overlay-section";
 import { SelectionSection } from "./_gallery/selection-section";
+import { SettingsSectionDemo } from "./_gallery/settings-demo-section";
 
 export function GalleryPage() {
   return (
@@ -26,6 +29,12 @@ export function GalleryPage() {
       <DisplaySection />
       <Separator />
       <DataTableSection />
+      <Separator />
+      <FormsSection />
+      <Separator />
+      <FeedbackSection />
+      <Separator />
+      <SettingsSectionDemo />
     </div>
   );
 }

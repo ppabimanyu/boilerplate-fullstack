@@ -63,7 +63,9 @@ export function DataTableSection() {
         <button
           type="button"
           className="text-sm text-muted-foreground underline underline-offset-4"
-          onClick={() => setError(error ? null : new Error("The projects service did not respond."))}
+          onClick={() =>
+            setError(error ? null : new Error("The projects service did not respond."))
+          }
         >
           {error ? "Show rows again" : "Show the error state"}
         </button>
