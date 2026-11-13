@@ -20,7 +20,7 @@ export function StatusPage({ icon, title, description, detail, actions }: Status
       <Card className="w-full max-w-md">
         <CardHeader>
           {icon ? (
-            <div className="mb-2 flex size-10 items-center justify-center rounded-full bg-muted text-muted-foreground">
+            <div className="mb-2 flex size-10 items-center justify-center rounded-md border border-border text-muted-foreground">
               {icon}
             </div>
           ) : null}
