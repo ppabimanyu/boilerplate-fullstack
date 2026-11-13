@@ -47,7 +47,7 @@ Acceptance: each primitive passes `tsc --noEmit`, `eslint`, and appears in `_gal
 
 | Component | Contract | Acceptance |
 | --- | --- | --- |
-| `pagination` | `total`, `limit`, `offset`, `onOffsetChange`, `pageSizeOptions` | Shows the visible range (`1–20 of 134`), disables edges correctly, emits offset 0 on page-size change |
+| `pagination` | `total`, `limit`, `offset`, `onOffsetChange`, `onLimitChange`, `pageSizeOptions` | Shows the visible range (`1–20 of 134`), disables edges correctly, emits offset 0 on page-size change |
 | `data-table` | `columns`, `rows`, `rowKey`, `total`, `limit`, `offset`, `onOffsetChange`, `isLoading`, `error`, `emptyTitle`, `emptyDescription` | Delegates loading, error, and empty to `DataState`; sorts only the current page and says so in the component doc comment |
 | `confirm-dialog` | `open`, `onOpenChange`, `onConfirm`, `title`, `description`, `confirmLabel`, `destructive` | Declarative, caller owns state; focus returns to the trigger on close |
 | `status-badge` | `status` (`success`/`warning`/`danger`/`neutral`/`pending`), `label`, `dot` | `health-status` is refactored to use it, which is the consumer that justifies its existence |
@@ -72,7 +72,7 @@ A component is done when all four are true:
 1. **Docs** (this spec, ADR-0002, glossary) — review gate. ✅ approved
 2. **Tier A primitives**, one commit per group: overlays (`dialog`, `alert-dialog`, `tooltip`), selection (`select`, `dropdown-menu`), display (`table`, `badge`, `skeleton`, `tabs`, `avatar`). ✅ installed, gallery split into `src/app/_gallery/`, `tsc` + `eslint` + `vitest` + `vite build` pass
 3. **`status-badge` + `health-status` refactor** — proves the baseline rule with a real consumer.
-4. **`pagination` → `data-table`** — table depends on pagination.
+4. **`pagination` → `data-table`** — table depends on pagination. ✅ `use-list-query` owns `limit`/`offset`/`q`, gallery demo paginates a fake 134-row set
 5. **`confirm-dialog`**, then `search-input` + `use-debounce`, `submit-button`, `settings-section`, `copy-button`.
 6. **`_gallery` consolidation** and a final `make lint`, `make test`, `make build`.
 

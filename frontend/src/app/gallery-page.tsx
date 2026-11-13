@@ -1,6 +1,7 @@
 import { PageHeader } from "@/components/shared/page-header";
 import { Separator } from "@/components/ui/separator";
 import { DataStateSection } from "./_gallery/data-state-section";
+import { DataTableSection } from "./_gallery/data-table-section";
 import { DisplaySection } from "./_gallery/display-section";
 import { FormFieldSection } from "./_gallery/form-field-section";
 import { OverlaySection } from "./_gallery/overlay-section";
@@ -23,6 +24,8 @@ export function GalleryPage() {
       <SelectionSection />
       <Separator />
       <DisplaySection />
+      <Separator />
+      <DataTableSection />
     </div>
   );
 }
