@@ -151,4 +151,9 @@
   svg.lucide {
     stroke-width: 1.75;
   }
+
+  /* Cards are sheets, not floating panels: keep the hairline, drop the lift. */
+  [data-slot="card"] {
+    box-shadow: none;
+  }
 }

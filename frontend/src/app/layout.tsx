@@ -2,6 +2,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 
 import { BrandLockup, BrandMark } from "@/brand/brand-mark";
 import { appName } from "@/brand/brand";
+import { ServiceChart } from "@/brand/service-chart";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { cn } from "@/lib/utils";
 
@@ -42,6 +43,7 @@ export function Layout() {
         <div className="mx-auto flex w-full max-w-[1120px] items-center gap-2.5 px-6 py-8 text-sm text-muted-foreground">
           <BrandMark className="size-4" />
           <span>Go, Postgres, and React, wired together.</span>
+          <ServiceChart className="ml-auto w-20 gap-1" />
         </div>
       </footer>
     </div>
